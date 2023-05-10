@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import {auth, googleProvider} from '../config/firebase';
 import {createUserWithEmailAndPassword,signInWithPopup, signOut} from 'firebase/auth';
+import {
+  MDBContainer,
+  MDBInput,
+  MDBCheckbox,
+  MDBBtn,
+  MDBIcon
+}
+from 'mdb-react-ui-kit';
 
 export const Auth = () => {
     const [email, setEmail] = useState("");
@@ -29,13 +37,48 @@ export const Auth = () => {
         }
     }
     return(
-        <div>
-            <p>{`Hello ${auth?.currentUser?.email}`}</p>
-            <input type ="text" placeholder="Email..." onChange={(e)=> setEmail(e.target.value)}/>
-            <input type="password" placeholder="Password..." onChange={(e)=> setPassword(e.target.value)}/>
-            <button onClick={signIn}>Sign In</button>
+        <>
+           
+        
+        
+         <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
+
+<MDBInput wrapperClass='mb-4' label='Email address' id='form1'onChange={(e)=> setEmail(e.target.value)} type='email'/>
+<MDBInput wrapperClass='mb-4' label='Password' id='form2'onChange={(e)=> setPassword(e.target.value)} type='password'/>
+
+<div className="d-flex justify-content-between mx-3 mb-4">
+  <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
+  <a href="!#">Forgot password?</a>
+</div>
+
+<MDBBtn className="mb-4" onClick={signIn}>Sign in</MDBBtn>
+
+<div className="text-center">
+  <p>Not a member? <a href="#!">Register</a></p>
+  <p>or sign up with:</p>
+
+  <div className='d-flex justify-content-between mx-auto' style={{width: '40%'}}>
+    <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+      <MDBIcon fab icon='facebook-f' size="sm"/>
+    </MDBBtn>
+
+    <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+      <MDBIcon fab icon='twitter' size="sm"/>
+    </MDBBtn>
+
+    <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+      <MDBIcon fab icon='google' size="sm"/>
+    </MDBBtn>
+
+    <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+      <MDBIcon fab icon='github' size="sm"/>
+    </MDBBtn>
+    <button onClick={signIn}>Sign In</button>
             <button onClick={signInWithGoogle}>Sign In With Google</button>
             <button onClick={logOut}>Logout</button>
-        </div>
+  </div>
+</div>
+
+</MDBContainer></>
     )
 }
