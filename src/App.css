@@ -47,3 +47,25 @@ button:hover{
   background: #0d45a5;
   
 }
+.login{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  
+}
+.login button {
+  width: 10rem;
+  justify-content: center;
+}
+.profile-container{
+  display: flex;
+  flex-direction: column;
+
+}
+.profile{
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  justify-content: center;
+  
+}

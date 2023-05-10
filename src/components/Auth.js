@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import googlePhoto from '../assets/img/google.png'
 import {auth, googleProvider} from '../config/firebase';
 import {createUserWithEmailAndPassword,signInWithPopup, signOut} from 'firebase/auth';
 import {
@@ -55,7 +56,7 @@ export const Auth = () => {
 
 <div className="text-center">
   <p>Not a member? <a href="#!">Register</a></p>
-  <p>or sign up with:</p>
+  
 
   <div className='d-flex justify-content-between mx-auto' style={{width: '40%'}}>
     <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
@@ -73,9 +74,13 @@ export const Auth = () => {
     <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
       <MDBIcon fab icon='github' size="sm"/>
     </MDBBtn>
+    <div className="login">
     <button onClick={signIn}>Sign In</button>
-            <button onClick={signInWithGoogle}>Sign In With Google</button>
-            <button onClick={logOut}>Logout</button>
+    
+    <button onClick={signInWithGoogle}>Sign In with Google </button>
+    
+    <button onClick={logOut}>Logout</button>
+    </div>
   </div>
 </div>
 

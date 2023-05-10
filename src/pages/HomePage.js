@@ -1,5 +1,4 @@
 import React,{ useEffect, useState } from "react";
-import '../App.css'
 import { db, auth, storage } from "../config/firebase";
 import { ref, uploadBytes, listAll, getDownloadURL , getMetadata} from "firebase/storage";
 import {v4} from 'uuid';
@@ -127,7 +126,7 @@ await onSubmitPhoto()
     <input type="file" onChange={(e) => setFile(e.target.files[0])} />
     <button className="drop-title" onClick={uploadFile} >Upload File</button>
        
-      <Photos imageList={imageList} />
+      <Photos imageList={imageList} deletePhoto={deletePhoto}/>
   </div>
    
   )}

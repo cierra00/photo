@@ -6,6 +6,8 @@ import Header from './pages/Sections/Header';
 import Footer from './pages/Sections/Footer'
 import NotFound from './pages/NotFound';
 import ProfilePage from './pages/ProfilePage';
+import ManagePage from './pages/ManagePage';
+import './App.css'
 
 
 export default function App() {
