@@ -1,9 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+
 header{
   width:100%;
   margin: 0 auto;
+  height: 3vh;
+}
+nav{
+  padding: 20px 0 20px 0
 }
 
-
+.app{
+  margin-top: 80px;
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +23,7 @@ header{
 }
 .cards img {
   margin: 10px;
-  border: 3px solid #000;
+  
   box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3); 
   max-width: 23vw;
 }
@@ -68,4 +78,47 @@ button:hover{
   width: 20rem;
   justify-content: center;
   
+}
+.wrapper{
+  display: inline-block;
+  height: 60vh;
+}
+
+#footer{
+  height: 50px;
+}
+
+.imageContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-align: center;
+}
+.imageContainer img {
+  border-radius: 50%;
+}
+
+.formStyle{
+  width: 20rem;
+  margin: 50px 30px 0 30px;
+}
+.form-width{
+  width: 400px;
+}
+.loginForm{
+  display: flex;
+}
+.auth{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.box{
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }

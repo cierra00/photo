@@ -1,19 +1,28 @@
 import React from 'react'
+import {storage} from '../../config/firebase'
 
 import {v4} from 'uuid';
 
-export default function Photos({photograph, description, alt, id, imageList, deletePhoto}) {
+export default function Photos({photograph, description, alt, key, id, imageList}) {
+  const deletePhoto = async (url)=>{
+    console.log(url)
+  }
   return (
-    
-    <main className="cards">
-    {imageList.map((url)=> {
-          return <><img src={url}  key={v4()} alt={alt} />
-          <button onClick={deletePhoto}>Delete</button>
-          </>
-          })} 
-         
-      </main>
-  
+   
+    <>
+  <main className="cards">
+    <div className="wrapper">
+      <div>
+        {imageList.map((url, index)=> (
+          
+          <><img key={v4} src={url}  alt={alt} /><button>Delete</button></>
+          
+        
+          ))} 
+      </div>
+    </div>
+  </main>
+  </>
   
 
     

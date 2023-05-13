@@ -1,17 +1,17 @@
-import React,{ createContext } from "react";
+import { useState, createContext, useEffect } from "react";
+import TaskData from "../Task/TaskData";
+import { v4 as uuidv4 } from "uuid";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  limit,
+  orderBy,
+  query,
+  updateDoc,
+} from "firebase/firestore";
+import { db } from "../../firebase";
 
 const PhotoContext = createContext();
-
-export const PhotoProvider = ({children}) => {
-
-    const photoList = [
-        {
-            id: 1,
-            Title: "photo1",
-            description: "first photo"
-        }
-    ]
-    return (<PhotoContext.Provider value={photoList}>{children}</PhotoContext.Provider>)
-}
-
-export default PhotoContext;

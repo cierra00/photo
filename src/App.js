@@ -6,25 +6,30 @@ import Header from './pages/Sections/Header';
 import Footer from './pages/Sections/Footer'
 import NotFound from './pages/NotFound';
 import ProfilePage from './pages/ProfilePage';
-import ManagePage from './pages/ManagePage';
+
+
 import './App.css'
+import { AuthContextProvider } from './components/context/AuthContext';
 
 
 export default function App() {
  
   return (
     <>
-      <BrowserRouter>
-      <Header />
-      <Routes>
-       <Route path="/" element={<HomePage />}></Route>
-       <Route path="/login" element={<LoginPage />}></Route>
-       <Route path="/profile" element={<ProfilePage />}></Route>
-       <Route path="*" element={<NotFound />}></Route>
-       <Route path="/photo/:id" element={<NotFound />}></Route>
-      </Routes>
-      <Footer />
-      </BrowserRouter>
+    <AuthContextProvider>
+    <BrowserRouter>
+    <Header />
+    <Routes>
+     <Route path="/" element={<LoginPage />} />
+     <Route path="/home" element={<HomePage />} />
+     <Route path="/user-login" element={<LoginPage />} />
+     <Route path="/profile" element={<ProfilePage />} />
+     
+     
+   </Routes>
+    <Footer />
+    </BrowserRouter>
+       </ AuthContextProvider>
     </>
   )}
 
